@@ -1,0 +1,11 @@
+{% extends 'contacts/base.html' %}
+
+{% block content %}
+<h2 class="text-center mb-4">{{ contact.name }}</h2>
+<ul class="list-group">
+    {% for phone_number in contact.phone_numbers.all %}
+    <li class="list-group-item">{{ phone_number.number }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'contact-list' %}" class="btn btn-secondary mt-4">Back to list</a>
+{% endblock %}
